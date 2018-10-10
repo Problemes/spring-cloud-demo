@@ -18,6 +18,6 @@ public class TestController {
 
     @GetMapping("/movie/{id}")
     public User testController(@PathVariable("id") Long id){
-        return restTemplate.getForObject("http://localhost:7900/user/" + id, User.class);
+        return restTemplate.getForObject("http://MICROSERVICE-PROVIDER-USER/user/" + id, User.class);
     }
 }
