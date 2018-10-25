@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface StoreClient {
 
     //feign 此处不能用GetMapping 等组合注解; PathVariable 的路径参数必须完整不能省略; 当为传入的参数为复杂对象时，请求方法feign为默认为POST;
-//    @RequestLine(value = "GET /user/{id}")
+//    @RequestLine(value = "GET /user/{id}") // 自定义configuration FooConfiguration 配置
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
     User testController(@PathVariable("id") Long id);
 
