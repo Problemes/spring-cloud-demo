@@ -27,6 +27,8 @@ public class TestController {
         return restTemplate.getForObject("http://MICROSERVICE-PROVIDER-USER/user/" + id, User.class);
     }
 
+    // # /health.stream 开放的端口是检测api端口信息
+
     public User testControllerFallback(Long id){
         User user = new User();
 

@@ -12,4 +12,4 @@ eureka:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${vcap.application.instance_id:${server.port}} #${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 3000
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 3000  #hystrix 超时策略，略长于ribbon的超时时长 * 尝试次数。
