@@ -18,6 +18,7 @@
 		<module>microservice-consumer-movie-ribbon-hystrix</module>
 		<module>microservice-consumer-movie-feign-hystrix</module>
 		<module>microservice-getway-zuul</module>
+        <module>microservice-getway-zuul-route</module>
 	</modules>
 	
 	<properties>
@@ -37,7 +38,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Camden.SR1</version>
+				<version>Camden.SR2</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

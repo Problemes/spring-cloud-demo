@@ -1,0 +1,34 @@
+server:
+  port: 9001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://user:123@localhost:8761/eureka
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${vcap.application.instance_id:${server.port}}
+#zuul:
+#  routes:
+#    MICROSERVICE-PROVIDER-USER: /user/**
+
+
+
+spring:
+  application:
+    name: getway-zuul-route
+logging:
+  level:
+    com.netflix: debug
+
+zuul:
+  prefix: /api #全局配置前缀，加在zuul网关项目上
+  strip-prefix: false # 默认情况下，转发请求时前缀是会被strip掉，但是配置strip-prefix=false就会取消这个操作，这样是为了结合sb项目的server.context-path使用
+  routes:
+    MICROSERVICE-PROVIDER-USER: /user/**
+  ignored-patterns: /**/adimn/**  #包含admin的路径是不能被路由走的，不能转发到user/** 或其他路径上去
+  sensitive-headers: #黑名单为空
+zuul.QueryParamPreFilter.pre.disable: true
+
+
+
