@@ -19,6 +19,7 @@
 		<module>microservice-consumer-movie-feign-hystrix</module>
 		<module>microservice-getway-zuul</module>
         <module>microservice-getway-zuul-route</module>
+		<module>microservice-config-server</module>
 	</modules>
 	
 	<properties>
