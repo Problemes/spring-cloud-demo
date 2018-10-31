@@ -6,6 +6,10 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Problemes/springcloud-config-repo
+          uri: https://github.com/Problemes/springcloud-config-repo  #{application}
   application:
     name: thomas
+
+encrypt:
+  key: secrets
+
